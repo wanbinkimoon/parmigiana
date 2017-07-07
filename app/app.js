@@ -28,7 +28,7 @@ import LanguageProvider from 'containers/LanguageProvider';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
-// import '!file-loader?name=[name].[ext]!./favicon.ico';
+import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 import 'file-loader?name=[name].[ext]!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
@@ -63,6 +63,17 @@ const rootRoute = {
   component: App,
   childRoutes: createRoutes(store),
 };
+
+// Checking for font to mount 
+import FontFaceObserver from 'fontfaceobserver';
+
+const fontStyled = 'Signika Negative'
+const fontObserver = new FontFaceObserver(fontStyled);
+
+fontObserver.load().then(function () {
+  document.body.className += "fontLoaded";
+  console.log('%cFont Loaded ➜ ' + fontStyled, 'color: DEEPPINK; font-weight: bold')
+});
 
 const render = (messages) => {
   ReactDOM.render(

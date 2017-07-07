@@ -33,6 +33,25 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
+    },
+    {
+      path: '/projection',
+      name: 'Projection',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Projection/reducer'),
+          import('containers/Projection'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, component]) => {
+          injectReducer('projection', reducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
     }, {
       path: '*',
       name: 'notfound',

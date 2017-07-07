@@ -13,6 +13,7 @@ export class Projection extends React.Component { // eslint-disable-line react/p
   render() {
     return (
       <div>
+        Projection
       </div>
     );
   }
