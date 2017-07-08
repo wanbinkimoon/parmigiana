@@ -1,10 +1,10 @@
 import * as THREE from 'three'
 
-export default function Scene(screen, pW, pH){ 
+export default function Scene(screen, pW, pH, models){ 
   // Calling threejs. 
+  
   const scene = new THREE.Scene();
   scene.background = new THREE.Color("rgb(70, 70, 70)");
-
 
   // Create a camera. 
   // THREE.PerspectiveCamera(fov, aspect, near, far)
@@ -21,36 +21,50 @@ export default function Scene(screen, pW, pH){
   const sceneDOM = document.getElementById(screen)
   sceneDOM.appendChild( renderer.domElement );
 
-
-
   // Create a wireframe cube.
-  var geometry = new THREE.BoxGeometry( 40, 40, 40 );
-  var wireframe = new THREE.EdgesGeometry( geometry );
+  const geometry = new THREE.BoxGeometry( 40, 40, 40 );
+  const wirezz = new THREE.EdgesGeometry( geometry );
+  const mat = new THREE.LineBasicMaterial( { color: 0x82E0AA, linewidth: 5 } );
+  const cube = new THREE.LineSegments( wirezz, mat );
 
-  var material = new THREE.LineBasicMaterial( { color: 0x82E0AA, linewidth: 5 } );
-  var cube = new THREE.LineSegments( wireframe, material );
-
+  // Create a wireframe icosaedro
   const ico = new THREE.IcosahedronGeometry(20, 0)  
-  var wireframe2 = new THREE.EdgesGeometry( ico );
-  var material2 = new THREE.LineBasicMaterial( { color: 0xF39C12 } );
-  var cube2 = new THREE.LineSegments( wireframe2 , material2 );
+  const wireframe2 = new THREE.EdgesGeometry( ico );
+  const material2 = new THREE.LineBasicMaterial( { color: 0xF39C12 } );
+  const cube2 = new THREE.LineSegments( wireframe2 , material2 );
 
+  // -----------------------------------------------------------
+  // TEST DATA PARSING
+      const { soma, name, type, material, wire } = models.cube[0]
+
+      const widthC = soma.size.width
+      const heightC = soma.size.height
+      const depthC = soma.size.depth
+
+      window[`wire_${name}`] = new THREE.EdgesGeometry(new THREE.BoxGeometry( widthC, heightC, depthC ));
+      window[`wire_mat_${name}`] = new THREE.LineBasicMaterial( { ...material } );
+      window[`model_${name}`] = new THREE.LineSegments( window[`wire_${name}`],window[`wire_mat_${name}`] )
+
+
+
+  console.group('3d elements')
+  console.log(material)
+  console.log(models)
+  console.groupEnd()
+
+  // -----------------------------------------------------------
+  
+  
   const cubeSett = {
     depthTest: false,
     opacity: 0.5,
     name: 'cicciobello'
   }
   const objectTest = Object.keys(cubeSett).map((d) => cube.material[d] = cubeSett[d])
-  console.log(objectTest)
 
-  // cube.material.transparent = true;
   scene.add( cube );
   scene.add( cube2 );
-
-  console.group('3d elements')
-  console.log(cube)
-  console.log(material)
-  console.groupEnd()
+  scene.add( window[`model_${name}`] );
 
   // Adding a light. 
   const light = new THREE.PointLight(0xFFFFFF);
@@ -138,7 +152,8 @@ export default function Scene(screen, pW, pH){
     }
   
   cube2.rotation.x += 0.001;
-    
+  
+
   };
 
 

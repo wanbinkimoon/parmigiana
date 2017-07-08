@@ -40,13 +40,14 @@ This section describe how is structured the object passed to the render engine.
 ### Cube 
 ```javascript
 {
-  class: cube,
+  type: cube,
   name: cube_1,
   wire: true,
   material: {
     color: tomato,
     ...
   },
+  // This section describe the aspect and position of the model 
   soma: {
     position: {
       x: 0,
@@ -65,6 +66,7 @@ This section describe how is structured the object passed to the render engine.
       depth: 40
     }
   },
+  // This section describe the movement of the model 
   psiche: {
     position: {
       x: 0,
@@ -87,6 +89,7 @@ This section describe how is structured the object passed to the render engine.
 ```
 
 # Future Developmpens
+  - [ ] Implement min-max range of action in animations
   - [ ] Integrate React VR 
 
 
