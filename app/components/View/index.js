@@ -19,7 +19,7 @@ class View extends React.Component { // eslint-disable-line react/prefer-statele
     div.id = `sceneDOM_${screen}`;
     const h = ViewDOM.clientHeight
     const w = ViewDOM.clientWidth
-    console.log(ViewDOM.style)
+
     ViewDOM.appendChild(div);
     Scene(div.id, w, h)
   }

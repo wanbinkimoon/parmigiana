@@ -33,12 +33,10 @@ function appReducer(state = initialState, action) {
   switch (action.type) {
 
     case INIT:
-      console.log(action)
       return state
         .set('linked', action.i.length != 0)
 
     case LOAD_MIDI:
-      console.log('load midi')
       return state
         .set('device', action.data[0].name)
         .set('manufacturer', action.data[0].manufacturer)

@@ -26,15 +26,31 @@ export default function Scene(screen, pW, pH){
   // Create a wireframe cube.
   var geometry = new THREE.BoxGeometry( 40, 40, 40 );
   var wireframe = new THREE.EdgesGeometry( geometry );
+
   var material = new THREE.LineBasicMaterial( { color: 0x82E0AA, linewidth: 5 } );
   var cube = new THREE.LineSegments( wireframe, material );
-  var material2 = new THREE.LineBasicMaterial( { color: 0xF39C12, linewidth: 5 } );
-  var cube2 = new THREE.LineSegments( wireframe, material2 );
-  cube.material.depthTest = false;
-  cube.material.opacity = 0.5;
+
+  const ico = new THREE.IcosahedronGeometry(20, 0)  
+  var wireframe2 = new THREE.EdgesGeometry( ico );
+  var material2 = new THREE.LineBasicMaterial( { color: 0xF39C12 } );
+  var cube2 = new THREE.LineSegments( wireframe2 , material2 );
+
+  const cubeSett = {
+    depthTest: false,
+    opacity: 0.5,
+    name: 'cicciobello'
+  }
+  const objectTest = Object.keys(cubeSett).map((d) => cube.material[d] = cubeSett[d])
+  console.log(objectTest)
+
   // cube.material.transparent = true;
   scene.add( cube );
   scene.add( cube2 );
+
+  console.group('3d elements')
+  console.log(cube)
+  console.log(material)
+  console.groupEnd()
 
   // Adding a light. 
   const light = new THREE.PointLight(0xFFFFFF);
@@ -52,7 +68,7 @@ export default function Scene(screen, pW, pH){
 
   cube2.scale.y = .25;
   cube2.scale.x = .25;
-  cube2.scale.z = .75;
+  cube2.scale.z = .25;
 
   cube2.rotation.z = 45;
   cube2.rotation.x = 45;
@@ -120,6 +136,8 @@ export default function Scene(screen, pW, pH){
     } else if ( cube2.scale.z < min )  {
       iZ2 = .01;
     }
+  
+  cube2.rotation.x += 0.001;
     
   };
 
