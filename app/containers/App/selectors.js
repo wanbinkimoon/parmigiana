@@ -1,4 +1,6 @@
 // makeSelectLocationState expects a plain JS object for the routing state
+import { createSelector } from 'reselect';
+
 const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -15,6 +17,15 @@ const makeSelectLocationState = () => {
   };
 };
 
+const selectAppDomain = () => (state) => state.get('app');
+
+const makeSelectMidiLink = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.get('linked'),
+);
+
+
 export {
+  makeSelectMidiLink,
   makeSelectLocationState,
 };

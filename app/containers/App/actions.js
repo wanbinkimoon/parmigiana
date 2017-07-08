@@ -1,4 +1,4 @@
-import { INIT, NOTE, KNOB } from './constants';
+import { INIT, LOAD_MIDI, PAD, KNOB } from './constants';
 
 export function init(i) {
   return {
@@ -7,9 +7,16 @@ export function init(i) {
   }
 }
 
-export function note(e) {
+export function loadMidi(data) {
   return {
-    type: NOTE,
+    type: LOAD_MIDI,
+    data
+  }
+}
+
+export function pad(e) {
+  return {
+    type: PAD,
     e
   }
 }

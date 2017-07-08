@@ -21,9 +21,11 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         <h2>Open your session</h2>
         <ul>
           <li><Link to='/projection'>Projection screen</Link></li>
-          <li><Link to='/controller'>Controller screen</Link></li>
-        </ul> 
+          <li><Link to='/controller/visual'>Controller screen</Link></li>
+        </ul>
       </div>
     );
   }
 }
+
+

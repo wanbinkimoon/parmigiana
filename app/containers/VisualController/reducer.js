@@ -1,6 +1,6 @@
 /*
  *
- * Projection reducer
+ * VisualController reducer
  *
  */
 
@@ -10,10 +10,10 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  
+  controller: 'visual'
 });
 
-function projectionReducer(state = initialState, action) {
+function visualControllerReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
@@ -22,4 +22,4 @@ function projectionReducer(state = initialState, action) {
   }
 }
 
-export default projectionReducer;
+export default visualControllerReducer;

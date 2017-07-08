@@ -16,7 +16,7 @@ const selectProjectionDomain = () => (state) => state.get('projection');
 
 const makeSelectProjection = () => createSelector(
   selectProjectionDomain(),
-  (substate) => substate.toJS()
+  (substate) => substate.get()
 );
 
 export default makeSelectProjection;

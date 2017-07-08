@@ -11,5 +11,6 @@
 
 export const DEFAULT_LOCALE = 'en';
 export const INIT = 'app/App/INIT';
-export const NOTE = 'app/App/NOTE';
+export const LOAD_MIDI = 'app/App/LOAD_MIDI';
+export const PAD = 'app/App/PAD';
 export const KNOB = 'app/App/KNOB';

@@ -52,7 +52,27 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
+      path: '/controller/visual',
+      name: 'VisualController',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/VisualController/reducer'),
+          import('containers/VisualController'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, component]) => {
+          injectReducer('visualController', reducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, 
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

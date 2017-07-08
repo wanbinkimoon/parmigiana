@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 
 import { createStructuredSelector } from 'reselect';
 
-import { note, knob, init } from './actions';
-// import { makeSelectNote } from './selectors';
+import { pad, knob, init, loadMidi } from './actions';
+import { makeSelectMidiLink } from './selectors';
 
 import WebMidi from 'webmidi';
 
@@ -22,15 +22,23 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
   };
 
   componentWillMount(){
-    const { init } = this.props
+    const { init, midiLink } = this.props
     WebMidi.enable(() => {init(WebMidi.inputs)})
+    // Load Input infos
+    midiLink && loadMidi(WebMidi.inputs)
+  }
+
+  componentWillReceiveProps(nextProps) {
   }
 
   render() {
-    const { note, knob } = this.props
+    const { pad, knob, midiLink, loadMidi } = this.props
 
-    const note_middle = (e) => {
-      note(e);
+    
+
+
+    const pad_middle = (e) => {
+      pad(e);
     }
 
     const knob_middle = (e) => {
@@ -43,7 +51,7 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
         console.log(WebMidi.outputs);
       } else {
         var input = WebMidi.getInputByName("LPD8");
-        input.addListener('noteon', 'all', note_middle);
+        input.addListener('noteon', 'all', pad_middle);
         input.addListener('controlchange', 'all', knob_middle);
       }
     });
@@ -57,13 +65,14 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
 }
 
 const mapStateToProps = createStructuredSelector({
-  // note: makeSelectNote()
+  midiLink: makeSelectMidiLink()
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    note: (e) => dispatch(note(e)),
     init: (i) => dispatch(init(i)),
+    loadMidi: (data) => dispatch(loadMidi(data)),
+    pad: (e) => dispatch(pad(e)),
     knob: (e) => dispatch(knob(e)),
   };
 }

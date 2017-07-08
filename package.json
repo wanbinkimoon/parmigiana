@@ -236,6 +236,7 @@
     "reselect": "2.5.4",
     "sanitize.css": "4.1.0",
     "styled-components": "^2.1.1",
+    "three": "^0.86.0",
     "warning": "3.0.0",
     "webmidi": "^2.0.0-rc.5",
     "whatwg-fetch": "2.0.1"
