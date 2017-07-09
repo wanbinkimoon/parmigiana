@@ -13,7 +13,7 @@ import {
 } from './constants';
 
 import log from '../../utils/log';
-import { padController } from './controllers';
+import { padController, knobController } from './controllers';
 
 const initialState = fromJS({
   linked: false,
@@ -32,6 +32,10 @@ const initialState = fromJS({
       active: false,
       payload: null,
     }
+  },
+  switcher: {
+    soma: 'size',
+    psiche: 'size'
   }
 });
 
@@ -49,12 +53,12 @@ function appReducer(state = initialState, action) {
         .set('manufacturer', action.data[0].manufacturer)
     
     case PAD:
-      log(action.e)
+      // log(action.e)
       return padController(state, initialState, action.e)
       
     case KNOB: 
-      log(action.e)
-      return state
+      // log(action.e)
+      return knobController(state, initialState, action.e)
 
     default:
       return state;

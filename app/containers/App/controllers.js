@@ -61,3 +61,34 @@ export const padController = (state, initialState, e) => {
       return state
   }
 }
+
+export const knobController = (state, initialState, e) => {
+  const { controller, value } = e
+  const { number } = controller
+
+  const switchHandler = (value) => {
+    if (0 <= value && value <= 21) {
+      return 'size'
+    } else if (22 <= value && value <= 43) {
+      return 'position'
+    } else if (44 <= value && value <= 65) {
+      return 'rotation'
+    } else if (66 <= value && value <= 87) {
+      return 'scale'
+    } else if (88 <= value && value <= 109) {
+      return 'color'
+    } else if (110 <= value && value <= 127) {
+      return 'sides'
+    } 
+  }
+  
+  switch (number) {
+    case 1:
+      return state.setIn(['switcher', 'psiche'], switchHandler(value))
+    case 5: 
+      return state.setIn(['switcher', 'soma'], switchHandler(value))
+    default:
+      return state
+
+  }
+}
