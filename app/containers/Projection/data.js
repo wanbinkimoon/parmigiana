@@ -1,4 +1,4 @@
-export const models = {
+export const projection_model = {
   cube: [
     {
       type: 'cube',

@@ -25,8 +25,7 @@ class View extends React.Component { // eslint-disable-line react/prefer-statele
     const w = ViewDOM.clientWidth
 
     ViewDOM.appendChild(div);
-
-    Scene(div.id, w, h, models);
+    Scene(div.id, w, h, this.props.models);
   }
 
   render() {

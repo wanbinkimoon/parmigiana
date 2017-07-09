@@ -16,6 +16,8 @@ import View from '../../components/View'
 
 import { Wrap, Row, Cell, Title, ViewrWrap } from './styles';
 
+import { constructor_model } from './data'
+
 export class VisualController extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -25,7 +27,7 @@ export class VisualController extends React.Component { // eslint-disable-line r
           <Cell>
             <Title>{messages.constructor.defaultMessage}</Title>
             <ViewrWrap>
-              <View screen={2}/>
+              <View screen={2} models={constructor_model}/>
             </ViewrWrap>
           </Cell>
           <Cell>

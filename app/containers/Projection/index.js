@@ -13,11 +13,13 @@ import View from '../../components/View'
 
 import { Wrap } from './styles'
 
+import { projection_model } from './data'
+
 export class Projection extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <Wrap>
-        <View screen={1} />
+        <View screen={1} models={projection_model}/>
       </Wrap>
     );
   }
