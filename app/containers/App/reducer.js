@@ -17,15 +17,21 @@ import { padController } from './controllers';
 
 const initialState = fromJS({
   linked: false,
-  device: '',
-  manufacturer: '',
+  device: null,
+  manufacturer: null,
   step: {
-          1: false,
-          2: false,
-          3: false
-        },
-  note: {
-
+    one: {
+      active: false,
+      payload: null,
+    }, 
+    two: {
+      active: false,
+      payload: null,
+    }, 
+    three: {
+      active: false,
+      payload: null,
+    }
   }
 });
 
@@ -37,13 +43,14 @@ function appReducer(state = initialState, action) {
         .set('linked', action.i.length != 0)
 
     case LOAD_MIDI:
+      console.log('load midi')
       return state
         .set('device', action.data[0].name)
         .set('manufacturer', action.data[0].manufacturer)
     
     case PAD:
       log(action.e)
-      return padController(state, action.e)
+      return padController(state, initialState, action.e)
       
     case KNOB: 
       log(action.e)

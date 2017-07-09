@@ -22,20 +22,20 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
   };
 
   componentWillMount(){
-    const { init, midiLink } = this.props
-    WebMidi.enable(() => {init(WebMidi.inputs)})
-    // Load Input infos
-    midiLink && loadMidi(WebMidi.inputs)
+    const { init, midiLink, loadMidi } = this.props
+    
+    WebMidi.enable(() => {
+        init(WebMidi.inputs)
+        loadMidi(WebMidi.inputs)
+      })
   }
 
   componentWillReceiveProps(nextProps) {
+
   }
 
   render() {
     const { pad, knob, midiLink, loadMidi } = this.props
-
-    
-
 
     const pad_middle = (e) => {
       pad(e);

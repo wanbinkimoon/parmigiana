@@ -41,30 +41,25 @@ export default function Scene(screen, pW, pH, models){
       const heightC = soma.size.height
       const depthC = soma.size.depth
 
-      window[`wire_${name}`] = new THREE.EdgesGeometry(new THREE.BoxGeometry( widthC, heightC, depthC ));
+      window[name] = new THREE.BoxGeometry( widthC, heightC, depthC );
+      window[`wire_${name}`] = new THREE.EdgesGeometry( window[name] );
       window[`wire_mat_${name}`] = new THREE.LineBasicMaterial( { ...material } );
       window[`model_${name}`] = new THREE.LineSegments( window[`wire_${name}`],window[`wire_mat_${name}`] )
 
+  // const cubeSett = {
+  //   depthTest: false,
+  //   opacity: 0.5,
+  //   name: 'cicciobello'
+  // }
 
+  // const objectTest = Object.keys(cubeSett).map((d) => cube.material[d] = cubeSett[d])
 
-  console.group('3d elements')
-  console.log(material)
-  console.log(models)
-  console.groupEnd()
-
+  scene.add( window[`model_${name}`] );
   // -----------------------------------------------------------
-  
-  
-  const cubeSett = {
-    depthTest: false,
-    opacity: 0.5,
-    name: 'cicciobello'
-  }
-  const objectTest = Object.keys(cubeSett).map((d) => cube.material[d] = cubeSett[d])
+
 
   scene.add( cube );
   scene.add( cube2 );
-  scene.add( window[`model_${name}`] );
 
   // Adding a light. 
   const light = new THREE.PointLight(0xFFFFFF);

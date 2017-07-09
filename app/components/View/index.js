@@ -25,11 +25,12 @@ class View extends React.Component { // eslint-disable-line react/prefer-statele
     const w = ViewDOM.clientWidth
 
     ViewDOM.appendChild(div);
-    
+
     Scene(div.id, w, h, models);
   }
 
   render() {
+
     return (
     <ViewWrap ref={(ViewWrap) => { this.viewDOM = ViewWrap; }} />
     );
