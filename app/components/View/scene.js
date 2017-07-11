@@ -27,26 +27,12 @@ export default function Scene(screen, pW, pH, models) {
   sceneDOM.appendChild( renderer.domElement );
 
   birth(models.cube)
-
-
-  // const cubeSett = {
-  //   depthTest: false,
-  //   opacity: 0.5,
-  //   name: 'cicciobello'
-  // }
-
-  // const objectTest = Object.keys(cubeSett).map((d) => cube.material[d] = cubeSett[d])
   models.cube.map((d) => scene.add( window[`model_${d.name}`] ))
 
-  // -----------------------------------------------------------
-
-
-
-  // Rendering the cube.
   const render = () => {
 
     life(models.cube)
-
+    scene.rotation.z += .005
     requestAnimationFrame( render );
     camera.updateProjectionMatrix();
     renderer.render(scene, camera);

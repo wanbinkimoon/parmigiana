@@ -19,13 +19,32 @@ const makeSelectLocationState = () => {
 
 const selectAppDomain = () => (state) => state.get('app');
 
-const makeSelectMidiLink = () => createSelector(
+export const makeSelectMidiLink = () => createSelector(
   selectAppDomain(),
   (substate) => substate.get('linked'),
 );
 
+export const makeSelectPad = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.get('step').toJS(),
+);
+
+export const makeSelectKnob = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.get('switcher').toJS(),
+);
+
+export const makeSelectSoma = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.get('soma').toJS(),
+);
+
+export const makeSelectPsiche = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.get('psiche').toJS(),
+);
+
 
 export {
-  makeSelectMidiLink,
   makeSelectLocationState,
 };

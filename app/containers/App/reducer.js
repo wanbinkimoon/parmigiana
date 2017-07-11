@@ -36,6 +36,16 @@ const initialState = fromJS({
   switcher: {
     soma: 'size',
     psiche: 'size'
+  },
+  soma: {
+    a: 1,
+    b: 1,
+    c: 1
+  },
+  psiche: {
+    a: 1,
+    b: 1,
+    c: 1
   }
 });
 

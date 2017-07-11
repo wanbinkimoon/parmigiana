@@ -83,10 +83,22 @@ export const knobController = (state, initialState, e) => {
   }
   
   switch (number) {
-    case 1:
-      return state.setIn(['switcher', 'psiche'], switchHandler(value))
-    case 5: 
+    case 1: 
       return state.setIn(['switcher', 'soma'], switchHandler(value))
+    case 2:
+      return state.setIn(['soma', 'a'], value)
+    case 3:
+      return state.setIn(['soma', 'b'], value)
+    case 4:
+      return state.setIn(['soma', 'c'], value)
+    case 5:
+      return state.setIn(['switcher', 'psiche'], switchHandler(value))
+    case 6:
+      return state.setIn(['psiche', 'a'], value)
+    case 7:
+      return state.setIn(['psiche', 'b'], value)
+    case 8:
+      return state.setIn(['psiche', 'c'], value)
     default:
       return state
 

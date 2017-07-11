@@ -8,10 +8,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ViewWrap } from './styles'
 
-
-// temporary development data 
-import { models } from './data'
-
 import Scene from './scene' 
 
 class View extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -29,9 +25,8 @@ class View extends React.Component { // eslint-disable-line react/prefer-statele
   }
 
   render() {
-
     return (
-    <ViewWrap ref={(ViewWrap) => { this.viewDOM = ViewWrap; }} />
+      <ViewWrap ref={(ViewWrap) => { this.viewDOM = ViewWrap; }} />
     );
   }
 }

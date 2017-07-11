@@ -10,7 +10,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { pad, knob, init, loadMidi } from './actions';
-import { makeSelectMidiLink } from './selectors';
+import { makeSelectMidiLink, makeSelectPad, makeSelectKnob, makeSelectSoma, makeSelectPsiche } from './selectors';
+
+import { mappingValues } from './dealer'
 
 import WebMidi from 'webmidi';
 
@@ -31,6 +33,9 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
   }
 
   componentWillReceiveProps(nextProps) {
+    const { padData, knobData, somaData, psicheData } = this.props
+    console.log(somaData)
+    mappingValues(knobData, somaData, psicheData)
 
   }
 
@@ -65,7 +70,11 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
 }
 
 const mapStateToProps = createStructuredSelector({
-  midiLink: makeSelectMidiLink()
+  midiLink: makeSelectMidiLink(),
+  padData: makeSelectPad(),
+  knobData: makeSelectKnob(),
+  somaData: makeSelectSoma(),
+  psicheData: makeSelectPsiche()
 });
 
 function mapDispatchToProps(dispatch) {
