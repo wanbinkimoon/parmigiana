@@ -30,25 +30,26 @@ Unfortunally at the moment the only device supported is the most famous **AKAI L
 
 ### Knobs:
 
+| CHANNEL | CONTROLLER ID | ACTION           |
+|---------|---------------|------------------|
+| 1       | 1            | soma.switcher    |
+| 1       | 2            | soma.a           |
+| 1       | 3            | soma.b          |
+| 1       | 4            | soma.c             |
+| 1       | 5            | psiche.switcher        |
+| 1       | 6            | psiche.a   |
+| 1       | 7           | psiche.b        |
+| 1       | 8            | psiche.c          |
+
+### Knob mapping:
 | ROW | SWITCHER | A | B | C |
 |--------|---------|---------|---------|---------|
 | SOMA     | o    | o | o   | o |
 | PSICHE     | o    | o | o   | o |
 
-### Knob mapping:
-
-| SWITCHER | A | B | C |
-|---------|---------|---------|---------|
-| color     | h    | s | l    |
-| size  |  width | height |  depth |
-| sides  |  det | teta |  phi |
-| position  |  x | y |  x |
-| scale  |  x | y |  x |
-| rotation  |  x | y |  x |
 
 # Dynamics 
 **Parmigiana** allow you to create 3d models with ThreeJS and then push them in a presentational view. 
-
 # Model structure
 Models are firstly created in the constructor and then pushed in the scene `array`
 
@@ -146,6 +147,18 @@ somatic = { // can either be 'psychic'
     },
   }
 ```
+
+### Knob mapping:
+
+| SWITCHER | A | B | C |
+|---------|---------|---------|---------|
+| color     | h    | s | l    |
+| size  |  width | height |  depth |
+| sides  |  det | teta |  phi |
+| position  |  x | y |  x |
+| scale  |  x | y |  x |
+| rotation  |  x | y |  x |
+
 # Future Developmpens
   - [ ] Implement min-max range of action in animations
   - [ ] Integrate React VR 
