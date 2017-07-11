@@ -12,5 +12,6 @@ MIDI controlled visual with three js.
   - [ ] Integrate React VR 
 
 
-# Author
-Parmigiana is a project developed with <3 by [Nicola Bertelloni](nicola.bertelloni@gmail.com)
+# Authors
+• [Nicola Bertelloni](nicola.bertelloni@gmail.com)  – UX & development   
+• [Massimiliano Mauro](mauro.massimiliano@gmail.com) – UX & UI 
