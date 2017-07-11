@@ -165,5 +165,5 @@ somatic = { // can either be 'psychic'
 
 
 # Authors
-• [Nicola Bertelloni](nicola.bertelloni@gmail.com)  – UX & development
+• [Nicola Bertelloni](nicola.bertelloni@gmail.com)  – UX & development   
 • [Massimiliano Mauro](mauro.massimiliano@gmail.com) – UX & UI 
