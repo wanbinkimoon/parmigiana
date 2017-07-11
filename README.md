@@ -164,5 +164,6 @@ somatic = { // can either be 'psychic'
   - [ ] Integrate React VR 
 
 
-# Author
-Parmigiana is a project developed with <3 by [Nicola Bertelloni](nicola.bertelloni@gmail.com)
+# Authors
+• [Nicola Bertelloni](nicola.bertelloni@gmail.com)
+• [Massimiliano Mauro](mauro.massimiliano@gmail.com)
