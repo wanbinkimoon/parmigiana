@@ -7,6 +7,8 @@ MIDI controlled visual with three js.
 # Mechanics 
 **Parmigiana** allow you to create 3d models with ThreeJS and then push them in a presentational view. 
 
+Take a look at the [wiki](./wiki) for further details.
+
 # Future Developmpens
   - [ ] Implement min-max range of action in animations
   - [ ] Integrate React VR 
