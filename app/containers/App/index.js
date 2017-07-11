@@ -34,9 +34,7 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
 
   componentWillReceiveProps(nextProps) {
     const { padData, knobData, somaData, psicheData } = this.props
-    console.log(somaData)
     mappingValues(knobData, somaData, psicheData)
-
   }
 
   render() {

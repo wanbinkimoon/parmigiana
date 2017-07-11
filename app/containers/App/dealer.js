@@ -34,6 +34,41 @@ export const mappingValues = (knobData, somaData, psicheData) => {
       z: somaData.c
     },
   }
+
+  let psychic = new Object  
+  psychic = {
+    color: {
+      h: psicheData.a,
+      s: psicheData.b,
+      l: psicheData.c
+    },
+    size: {
+      width: psicheData.a,
+      height: psicheData.b,
+      depth: psicheData.c
+    },
+    sides: {
+      det: psicheData.a,
+      teta: psicheData.b,
+      phi: psicheData.c
+    },
+    position: {
+      x: psicheData.a,
+      y: psicheData.b,
+      z: psicheData.c
+    },
+    scale: {
+      x: psicheData.a,
+      y: psicheData.b,
+      z: psicheData.c
+    },
+    rotation: {
+      x: psicheData.a,
+      y: psicheData.b,
+      z: psicheData.c
+    },
+  }
   
   console.log(somatic.color.h)
+  console.log(psychic.color.h)
 }

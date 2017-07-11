@@ -88,6 +88,64 @@ This section describe how is structured the object passed to the render engine.
 }
 ```
 
+
+## The Dealer
+The dealer handle the mapping of the knobs to the vasious aspects of *soma* and *psiche*. 
+
+### Soma knobs:
+
+| ROW | SWITCHER | A | B | C |
+|--------|---------|---------|---------|---------|
+| SOMA     | o    | o | o   | o |
+| PSICHE     | o    | o | o   | o |
+
+### Knob mapping:
+
+| SWITCHER | A | B | C |
+|---------|---------|---------|---------|
+| color     | h    | s | l    |
+| size  |  width | height |  depth |
+| sides  |  det | teta |  phi |
+| position  |  x | y |  x |
+| scale  |  x | y |  x |
+| rotation  |  x | y |  x |
+
+Here and example: 
+
+```javascript
+somatic = { // can either be 'psychic'
+    color: {
+      h: knob.a,
+      s: knob.b,
+      l: knob.c
+    },
+    size: {
+      width: knob.a,
+      height: knob.b,
+      depth: knob.c
+    },
+    sides: {
+      det: knob.a,
+      teta: knob.b,
+      phi: knob.c
+    },
+    position: {
+      x: knob.a,
+      y: knob.b,
+      z: knob.c
+    },
+    scale: {
+      x: knob.a,
+      y: knob.b,
+      z: knob.c
+    },
+    rotation: {
+      x: knob.a,
+      y: knob.b,
+      z: knob.c
+    },
+  }
+```
 # Future Developmpens
   - [ ] Implement min-max range of action in animations
   - [ ] Integrate React VR 
