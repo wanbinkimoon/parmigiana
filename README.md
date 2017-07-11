@@ -22,11 +22,29 @@ Unfortunally at the moment the only device supported is the most famous **AKAI L
 | 1       | 42            | Shape 2          |
 | 1       | 43            | Plain            |
 
------------------------
+### Pad mapping:
 | ↑40 ↓36 | ↑41 ↓37 | ↑42 ↓38 | ↑43 ↓39 |
 |---------|---------|---------|---------|
 | new     | push    | shape 1 | wire    |
 | select  | pull    | shape 2 | plain   |
+
+### Knobs:
+
+| ROW | SWITCHER | A | B | C |
+|--------|---------|---------|---------|---------|
+| SOMA     | o    | o | o   | o |
+| PSICHE     | o    | o | o   | o |
+
+### Knob mapping:
+
+| SWITCHER | A | B | C |
+|---------|---------|---------|---------|
+| color     | h    | s | l    |
+| size  |  width | height |  depth |
+| sides  |  det | teta |  phi |
+| position  |  x | y |  x |
+| scale  |  x | y |  x |
+| rotation  |  x | y |  x |
 
 # Dynamics 
 **Parmigiana** allow you to create 3d models with ThreeJS and then push them in a presentational view. 
@@ -91,24 +109,6 @@ This section describe how is structured the object passed to the render engine.
 
 ## The Dealer
 The dealer handle the mapping of the knobs to the vasious aspects of *soma* and *psiche*. 
-
-### Soma knobs:
-
-| ROW | SWITCHER | A | B | C |
-|--------|---------|---------|---------|---------|
-| SOMA     | o    | o | o   | o |
-| PSICHE     | o    | o | o   | o |
-
-### Knob mapping:
-
-| SWITCHER | A | B | C |
-|---------|---------|---------|---------|
-| color     | h    | s | l    |
-| size  |  width | height |  depth |
-| sides  |  det | teta |  phi |
-| position  |  x | y |  x |
-| scale  |  x | y |  x |
-| rotation  |  x | y |  x |
 
 Here and example: 
 
