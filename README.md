@@ -165,5 +165,5 @@ somatic = { // can either be 'psychic'
 
 
 # Authors
-• [Nicola Bertelloni](nicola.bertelloni@gmail.com)
+• [Nicola Bertelloni](nicola.bertelloni@gmail.com)   
 • [Massimiliano Mauro](mauro.massimiliano@gmail.com)
