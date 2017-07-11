@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/git,node,macos,visualstudio
 
+# Ignore the wiki repo #
+wiki 
+
 ### Git ###
 *.orig
 
