@@ -16,7 +16,6 @@ import { mappingValues } from './dealer'
 
 import WebMidi from 'webmidi';
 
-
 export class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {

@@ -12,6 +12,8 @@ import {
   KNOB
 } from './constants';
 
+import { model0 } from './model0'
+
 import log from '../../utils/log';
 import { padController, knobController } from './controllers';
 
@@ -46,6 +48,9 @@ const initialState = fromJS({
     a: 1,
     b: 1,
     c: 1
+  },
+  model0: {
+    ...model0
   }
 });
 

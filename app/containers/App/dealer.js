@@ -1,5 +1,4 @@
 export const mappingValues = (knobData, somaData, psicheData) => {
-  console.log(somaData.a)
 
   let somatic = new Object  
   somatic = {
@@ -69,6 +68,10 @@ export const mappingValues = (knobData, somaData, psicheData) => {
     },
   }
   
-  console.log(somatic.color.h)
-  console.log(psychic.color.h)
+  console.group('somatic')
+  console.log(somatic)
+  console.groupEnd()
+  console.group('psychic')
+  console.log(psychic)
+  console.groupEnd()
 }

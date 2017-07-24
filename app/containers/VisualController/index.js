@@ -45,7 +45,7 @@ export class VisualController extends React.Component { // eslint-disable-line r
           <Cell>
             <Title>{messages.shape.defaultMessage} </Title>
           </Cell>
-        </Row>}
+        </Row> }
       </Wrap>
     );
   }
