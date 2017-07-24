@@ -47,6 +47,8 @@ export class VisualController extends React.Component { // eslint-disable-line r
 
   render() {
 
+    const { fetus } = this.state
+    
     return (
       <Wrap>
         
@@ -54,7 +56,7 @@ export class VisualController extends React.Component { // eslint-disable-line r
           <Cell>
             <Title>{messages.constructor.defaultMessage}</Title>
             <ViewrWrap>
-              <View screen={2} models={constructor_model}/>
+              <View screen={2} models={{cube: [fetus]}}/>
             </ViewrWrap>
           </Cell>
           <Cell>
