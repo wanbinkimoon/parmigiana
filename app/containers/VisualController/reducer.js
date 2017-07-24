@@ -10,13 +10,15 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  controller: 'visual'
+  controller: 'visual',
+  dna: {}
 });
 
 function visualControllerReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
+
     default:
       return state;
   }

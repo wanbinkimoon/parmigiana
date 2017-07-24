@@ -1,6 +1,6 @@
 export const model0 = {
     type: 'cube',
-    name: 'cube_4',
+    name: 'cube_0',
     wire: true,
     material: {
       color: 'orange',

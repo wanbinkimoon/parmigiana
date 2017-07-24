@@ -1,4 +1,4 @@
-import { INIT, LOAD_MIDI, PAD, KNOB } from './constants';
+import { INIT, LOAD_MIDI, PAD, KNOB, MERCURIO } from './constants';
 
 export function init(i) {
   return {
@@ -25,5 +25,12 @@ export function knob(e) {
   return {
     type: KNOB,
     e
+  }
+}
+
+export function mercurio(data) {
+  return {
+    type: MERCURIO,
+    data
   }
 }

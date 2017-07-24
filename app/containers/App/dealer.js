@@ -67,11 +67,13 @@ export const mappingValues = (knobData, somaData, psicheData) => {
       z: psicheData.c
     },
   }
-  
-  console.group('somatic')
-  console.log(somatic)
-  console.groupEnd()
-  console.group('psychic')
-  console.log(psychic)
-  console.groupEnd()
+
+  return {
+    psychic : {
+      ...psychic
+    },
+    somatic: {
+      ...somatic
+    }}
+
 }

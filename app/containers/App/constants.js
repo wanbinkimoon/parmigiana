@@ -14,3 +14,4 @@ export const INIT = 'app/App/INIT';
 export const LOAD_MIDI = 'app/App/LOAD_MIDI';
 export const PAD = 'app/App/PAD';
 export const KNOB = 'app/App/KNOB';
+export const MERCURIO = 'app/App/MERCURIO';

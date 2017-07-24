@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import { createStructuredSelector } from 'reselect';
 
-import { pad, knob, init, loadMidi } from './actions';
+import { pad, knob, init, loadMidi, mercurio } from './actions';
 import { makeSelectMidiLink, makeSelectPad, makeSelectKnob, makeSelectSoma, makeSelectPsiche } from './selectors';
 
 import { mappingValues } from './dealer'
@@ -17,6 +17,13 @@ import { mappingValues } from './dealer'
 import WebMidi from 'webmidi';
 
 export class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        passingBy: {},
+    };
+  }
 
   static propTypes = {
     children: React.PropTypes.node,
@@ -33,8 +40,18 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
 
   componentWillReceiveProps(nextProps) {
     const { padData, knobData, somaData, psicheData } = this.props
-    mappingValues(knobData, somaData, psicheData)
+    
+    const youarehere = mappingValues(knobData, somaData, psicheData)
+    
+    this.setState({
+      passingBy: {
+        ...mercurio(youarehere).data
+      }
+    })
+    console.log(this.state.passingBy)
   }
+
+
 
   render() {
     const { pad, knob, midiLink, loadMidi } = this.props
@@ -60,7 +77,7 @@ export class App extends React.PureComponent { // eslint-disable-line react/pref
 
     return (
       <div>
-        {React.Children.toArray(this.props.children)}
+        {React.Children.toArray(React.cloneElement(this.props.children, { signal: this.state.passingBy }))}
       </div>
     );
   }
@@ -72,6 +89,7 @@ const mapStateToProps = createStructuredSelector({
   knobData: makeSelectKnob(),
   somaData: makeSelectSoma(),
   psicheData: makeSelectPsiche()
+  
 });
 
 function mapDispatchToProps(dispatch) {
@@ -80,6 +98,7 @@ function mapDispatchToProps(dispatch) {
     loadMidi: (data) => dispatch(loadMidi(data)),
     pad: (e) => dispatch(pad(e)),
     knob: (e) => dispatch(knob(e)),
+    mercurio: ([somaData, psicheData]) => dispatch(mercurio([somaData, psicheData])),
   };
 }
 

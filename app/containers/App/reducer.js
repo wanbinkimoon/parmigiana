@@ -9,7 +9,8 @@ import {
   INIT,
   LOAD_MIDI,
   PAD,
-  KNOB
+  KNOB, 
+  MERCURIO
 } from './constants';
 
 import { model0 } from './model0'
