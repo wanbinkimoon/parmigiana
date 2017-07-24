@@ -16,4 +16,3 @@ Take a look at the [wiki](https://github.com/wanbinkimoon/parmigiana/wiki) for f
 
 # Authors
 • [Nicola Bertelloni](nicola.bertelloni@gmail.com)  – UX & development   
-• [Massimiliano Mauro](mauro.massimiliano@gmail.com) – UX & UI 
