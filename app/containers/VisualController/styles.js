@@ -18,9 +18,10 @@ export const Row = styled.div`
 
 export const Cell = styled.div`
   width: 50%;
-  height: calc(100% - 32px);
-  margin: 16px;
-  padding: 8px;
+  height: 100%;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 32px;
   display: flex;
   border: 1px solid ${colors.base.accent};
   flex-direction: column;

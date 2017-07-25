@@ -11,6 +11,7 @@ import { createStructuredSelector } from 'reselect';
 import { makeSelectModel0, makeSelectSwitcher } from './selectors';
 import messages from './messages';
 
+import DeviceMock from '../../components/DeviceMock'
 import Projection from '../Projection'
 import View from '../../components/View'
 
@@ -67,14 +68,9 @@ export class VisualController extends React.Component { // eslint-disable-line r
           </Cell>
         </Row>
 
-        { false && <Row>
-          <Cell>
-            <Title>{messages.device.defaultMessage} </Title>
-          </Cell>
-          <Cell>
-            <Title>{messages.shape.defaultMessage} </Title>
-          </Cell>
-        </Row> }
+        <Row>
+          <DeviceMock />
+        </Row> 
       </Wrap>
     );
   }
