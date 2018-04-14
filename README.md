@@ -1,6 +1,8 @@
 # Parmigiana
 MIDI controlled visual with three js.   
 
+![](https://media.giphy.com/media/3kxqCAjnaUSfQKihkv/giphy.gif)
+
 --------------------
 **Parmigiana** is based on that React-Redux alchemy that makes things shine.   
 
